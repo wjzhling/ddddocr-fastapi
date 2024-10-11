@@ -1,14 +1,15 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append('/app')
 sys.path.append('/app/app')
 print(sys.path)
-from .models import OCRRequest, SlideMatchRequest, DetectionRequest, APIResponse
+from app.models import OCRRequest, SlideMatchRequest, DetectionRequest, APIResponse
 import uvicorn
 from fastapi import FastAPI, File, UploadFile, HTTPException, Form
 from typing import Optional, Union
 import base64
-from .services import ocr_service
+from app.services import ocr_service
 
 
 app = FastAPI()
